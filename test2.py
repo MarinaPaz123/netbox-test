@@ -1,5 +1,4 @@
 # Modules
-# Modules
 from icmplib import ping
 
 
@@ -21,9 +20,8 @@ class DeviceChecker(Script):
 
     devices = MultiObjectVar(
         model=Device,
-        query_params={"role":
-        {"id": "$devices_role"}
-         }
+        query_params={"role_id": "$devices_role"}
+
 
 
     )
