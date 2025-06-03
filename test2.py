@@ -3,7 +3,7 @@ from icmplib import ping
 from netmiko import ConnectHandler
 
 # Netbox artifcats
-from extras.scripts import Script, ObjectVar, MultiObjectVar
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar
 from dcim.models import DeviceRole, Device
 
 
@@ -24,7 +24,10 @@ class DeviceChecker(Script):
 
     )
 
+    input_commands = TextVar()
+
     def run(self, data, commit) -> None:
+
         print_in_nb = []
         for device in data["devices"]:
             cisco_dev = {
@@ -36,10 +39,11 @@ class DeviceChecker(Script):
             }
             connection = ConnectHandler(**cisco_dev)
             connection.enable()
-            result = connection.send_command('show ip int br')
+            result = connection.send_command(data["input_commands"])
             print_in_nb.append(result)
 
             device.save()
         return "\n".join(print_in_nb)
+
 
 
