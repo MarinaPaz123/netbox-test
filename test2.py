@@ -13,13 +13,19 @@ class DeviceChecker(Script):
     class Meta:
         name = "Псс"
         description = "Sample Script to set the status of the device based on its availability"
-        field_order = ("deviceroles", "devices")
+        field_order = ("devices_role", "devices")
 
-    devrole = ObjectVar(
+    devices_role = ObjectVar(
         model=DeviceRole
     )
 
-    dev = MultiObjectVar(
+    devices = MultiObjectVar(
         model=Device,
+        query_params={"role":
+        {"id": "$devices_role"}
+         }
+
+
     )
+
 
