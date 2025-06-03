@@ -3,7 +3,7 @@ from icmplib import ping
 from netmiko import ConnectHandler
 
 # Netbox artifcats
-from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
 from dcim.models import DeviceRole, Device
 
 
@@ -26,6 +26,16 @@ class DeviceChecker(Script):
 
     input_commands = TextVar()
 
+    select_info = (
+    ('show version', 'Инфо об устройстве'),
+    ('show interfaces', 'Инфо об интерфейсах'),
+    )
+
+    что_ты_хочешь_посмотреть_брат = ChoiceVar(choices=select_info)
+
+
+
+
     def run(self, data, commit) -> None:
 
         print_in_nb = []
@@ -43,7 +53,7 @@ class DeviceChecker(Script):
             print_in_nb.append(result)
 
             device.save()
-        return "\n".join(print_in_nb)
+        return "\n".join(print_in_nb
 
 
 
