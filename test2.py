@@ -24,7 +24,7 @@ class DeviceChecker(Script):
 
     )
 
-    input_commands = TextVar()
+    input_commands = TextVar(required = False) # Поле не обязательное для заполнения
 #
 #    select_info = (
 #    ('show version', 'Инфо об устройстве'),
