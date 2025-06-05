@@ -25,13 +25,13 @@ class DeviceChecker(Script):
     )
 
     input_commands = TextVar()
-
-    select_info = (
-    ('show version', 'Инфо об устройстве'),
-    ('show interfaces', 'Инфо об интерфейсах'),
-    )
-
-    что_ты_хочешь_посмотреть_брат = ChoiceVar(choices=select_info)
+#
+#    select_info = (
+#    ('show version', 'Инфо об устройстве'),
+#    ('show interfaces', 'Инфо об интерфейсах'),
+#    )
+#
+#    что_ты_хочешь_посмотреть_брат = ChoiceVar(choices=select_info)
 
 
 
@@ -50,10 +50,10 @@ class DeviceChecker(Script):
             connection = ConnectHandler(**cisco_dev)
             connection.enable()
             result = connection.send_command(data["input_commands"])
-            print_in_nb.append(result)
+            print_in_nb.append("УСТРОЙСТВО " + device.name + ":" + "\n")
+            print_in_nb.append(result + "\n")
 
             device.save()
-        return "\n".join(print_in_nb
-
+        return "\n".join(print_in_nb)
 
 
