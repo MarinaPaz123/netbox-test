@@ -1,3 +1,7 @@
+# Netbox artifcats
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
+from dcim.models import DeviceRole, Device
+
 from jinja2 import Environment, FileSystemLoader
 import yaml
 
