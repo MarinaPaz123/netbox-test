@@ -8,7 +8,12 @@ class ConfACL(Script):
         name = "Игра: собери свой ACL,бро",
         description = "conf_ACL"
 
-        devices_role = ObjectVar(
-            model=DeviceRole,
-            context= "Выбери роль устройства,э блэт"
-            )
+    devices_role = ObjectVar(
+        model=DeviceRole,
+        context= "Выбери роль,э"
+        )
+    def run(self, data, commit) -> None:
+        pass
+        
+
+
