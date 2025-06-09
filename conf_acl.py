@@ -1,8 +1,10 @@
-from dcim.models import DeviceRole, Device
+from dcim.models import DeviceRole, Device, RenderConfigMixin
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
+
+
 from jinja2 import Environment, FileSystemLoader
 import yaml
 
-from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
 
 class ConfACL(Script):
     class Meta:
@@ -14,10 +16,7 @@ class ConfACL(Script):
         model=DeviceRole,
         )
     
-    template_dev = MultiObjectVar(
-        model=DeviceRole,
-        query_params={"config_template": {"id": 2}}
-        )
+    template_dev = 
 
     def run(self, data, commit) -> None:
         pass
