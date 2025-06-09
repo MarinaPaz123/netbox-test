@@ -10,8 +10,8 @@ class ConfACL(Script):
         description = "conf_ACL"
 
     devices_role = ObjectVar(
+        description = "Выбери роль",
         model=DeviceRole,
-        
         )
     def run(self, data, commit) -> None:
         pass
