@@ -11,7 +11,7 @@ class ConfACL(Script):
 
     devices_role = ObjectVar(
         model=DeviceRole,
-        selector=True
+        
         )
     def run(self, data, commit) -> None:
         pass
