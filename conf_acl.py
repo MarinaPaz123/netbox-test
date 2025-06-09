@@ -5,7 +5,7 @@ from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
 
 class ConfACL(Script):
     class Meta:
-        name = "Игра: собери свой ACL,бро"
+        name = "Игра: собери свой ACL,бро",
         description = "conf_ACL"
 
         devices_role = ObjectVar(
