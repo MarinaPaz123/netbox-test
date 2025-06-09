@@ -13,6 +13,12 @@ class ConfACL(Script):
         description = "Выбери роль",
         model=DeviceRole,
         )
+    
+    template_dev = MultiObjectVar(
+        model=DeviceRole,
+        query_params={"config_template": {"id": 2}}
+        )
+
     def run(self, data, commit) -> None:
         pass
 
