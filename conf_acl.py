@@ -1,4 +1,5 @@
 from dcim.models import DeviceRole, Device
+from dcim.models.mixins import RenderConfigMixin
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
 
 
