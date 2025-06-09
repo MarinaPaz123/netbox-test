@@ -17,7 +17,7 @@ class ConfACL(Script):
         model=DeviceRole,
         )
     
-    #template_dev = 
+    template_dev = RenderConfigMixin()
 
     def run(self, data, commit) -> None:
         pass
