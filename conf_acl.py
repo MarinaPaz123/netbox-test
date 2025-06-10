@@ -14,12 +14,12 @@ class ConfACL(Script):
         description = "conf_ACL"
 
     devices_role = ObjectVar(
-        description = "Выбери роль",
-        model=DeviceRole,
+        description = "Выбери устройство",
+        model=Device,
         )
     
     template_dev = MultiObjectVar(
-        model=DeviceRole.objects.get(name="Conf_routers_test"),
+        model=Device.objects.get(name="Conf_routers_test"),
         
         )
     
