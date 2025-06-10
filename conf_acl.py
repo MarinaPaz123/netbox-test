@@ -19,7 +19,7 @@ class ConfACL(Script):
         )
     
     template_dev = MultiObjectVar(
-        model=DeviceRole,
+        model=DeviceRole.objects.get(name="Conf_routers_test"),
         query_params={"config_template_display": "Conf_routers_test"}
         )
     
