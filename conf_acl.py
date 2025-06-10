@@ -19,7 +19,7 @@ class ConfACL(Script):
         )
     
     template_dev = MultiObjectVar(
-        model=DeviceRole.objects.get(name="$devices_role"),
+        model=DeviceRole,
         query_params={"get_config_template": "$devices_role"}
         )
     
