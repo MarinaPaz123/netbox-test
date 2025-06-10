@@ -19,7 +19,7 @@ class ConfACL(Script):
         )
     
     template_dev = MultiObjectVar(
-        model=Device.objects.get(name="R2"),
+        model=Device,
         )
      
     
