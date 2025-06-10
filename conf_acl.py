@@ -17,10 +17,6 @@ class ConfACL(Script):
         description = "Выбери устройство",
         model=Device,
         )
-    
-    template_dev = MultiObjectVar(
-        model=Device,
-        )
      
     
     def run(self, data, commit) -> None:
