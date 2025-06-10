@@ -1,6 +1,6 @@
 from dcim.models import DeviceRole, Device
 from dcim.models.mixins import RenderConfigMixin
-from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, FileVar
 from dcim.models.devices import DeviceRole
 
 
@@ -18,7 +18,7 @@ class ConfACL(Script):
         model=DeviceRole,
         )
     
-    #template_dev = 
+    template_dev = FileVar()
     
     def run(self, data, commit) -> None:
         pass
