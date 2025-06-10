@@ -18,7 +18,10 @@ class ConfACL(Script):
         model=DeviceRole,
         )
     
-    template_dev = FileVar()
+    template_dev = MultiObjectVar(
+        model=DeviceRole,
+        query_params={"get_config_template": "$DeviceRole"}
+        )
     
     def run(self, data, commit) -> None:
         pass
