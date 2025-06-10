@@ -20,7 +20,7 @@ class ConfACL(Script):
     
     template_dev = MultiObjectVar(
         model=DeviceRole,
-        query_params={"config_template_id": 2}
+        query_params={"config_template_display": "Conf_routers_test"}
         )
     
     def run(self, data, commit) -> None:
