@@ -13,15 +13,15 @@ class ConfACL(Script):
         name = "Игра: собери свой ACL,бро"
         description = "conf_ACL"
 
-    devices_role = ObjectVar(
+    devices = ObjectVar(
         description = "Выбери устройство",
         model=Device,
         )
     
     template_dev = MultiObjectVar(
-        model=Device.objects.get(name="Conf_routers_test"),
-        
+        model=Device.objects.get(name="R2"),
         )
+     
     
     def run(self, data, commit) -> None:
         pass
