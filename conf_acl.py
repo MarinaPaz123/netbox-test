@@ -2,7 +2,7 @@ from dcim.models import DeviceRole, Device
 from dcim.models.mixins import RenderConfigMixin
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, FileVar
 from dcim.models.devices import DeviceRole
-from django.utils.text import slugify
+#from django.utils.text import slugify
 #import pynetbox
 #import requests
 
@@ -28,8 +28,7 @@ class ConfACL(Script):
         #netbox = pynetbox.api(URL, token = API_KEY)
         test_list = []
         for dev in data["devices"]:
-            #test_list.append(dev.custom_fields["test_temp_conf"])
-            slug=slugify(dev.custom_fields["test_temp_conf"])
+            test_list.append(dev.custom_fields[1])
             #test_list.append(str(dev.primary_ip.address.ip))
          
         return test_list
