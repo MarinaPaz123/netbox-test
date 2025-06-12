@@ -39,7 +39,7 @@ class ConfACL(Script):
             'secret': 'cisco',
             }
             connection = ConnectHandler(**cisco_dev)
-            #connection.enable()
+            connection.enable()
             for i in command_list:
                 result = connection.send_config_set(i)
                 
