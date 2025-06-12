@@ -21,7 +21,7 @@ class ConfACL(Script):
     
     def run(self, data, commit) -> None:
         test_list = []
-        test_list.append(data["custom_fields"])
+        test_list.append(data["serial"])
         return test_list
             
             
