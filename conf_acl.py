@@ -39,9 +39,11 @@ class ConfACL(Script):
             }
             connection = ConnectHandler(**cisco_dev)
             connection.enable()
-            result = connection.send_config_set(command_list)
+            for i in command_list:
+                result = connection.send_config_set(i)
+                
 
-        return  result
+        return  f"{device.name} ок"
         #return str(dev.custom_field_data)
             
             
