@@ -23,7 +23,7 @@ class ConfACL(Script):
     def run(self, data, commit) -> None:
         test_list = []
         for dev in data["devices"]:
-            test_list.append(str(dev.site))
+            test_list.append(str(dev.custom_fields))
          
         return test_list
             
