@@ -32,7 +32,7 @@ class ConfACL(Script):
             # Проходимся циклом по кастомному полю!!
             for key,val in dev.custom_field_data.items():
                 if val == None:
-                    return "пусто поле"  # Поправить !
+                    return "пусто поле"  # Поправить ! - continue
                 command_list.append(val)
                 cisco_dev = {
                     'device_type': 'cisco_ios',
