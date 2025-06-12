@@ -39,6 +39,7 @@ class ConfACL(Script):
                     'username': 'cisco',
                     'password': 'cisco',
                     'secret': 'cisco',
+                    "read_timeout"= 30,
                     }
                 connection = ConnectHandler(**cisco_dev)
                 connection.enable()
