@@ -46,7 +46,7 @@ class ConfACL(Script):
                 for i in command_list:
                     try:
                         result = connection.send_config_set(i)
-                    except ReadTimeout:
+                    except ReadTimeout: # Не понятно, почему. Ибо команды все отправляются 
                         return f"РЭАД ТАЙМАУТ БЛЯДЬ НА {dev.name}"
                 
 
