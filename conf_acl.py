@@ -39,12 +39,11 @@ class ConfACL(Script):
                     'username': 'cisco',
                     'password': 'cisco',
                     'secret': 'cisco',
-                    "read_timeout": 30,
                     }
                 connection = ConnectHandler(**cisco_dev)
                 connection.enable()
                 for i in command_list:
-                    result = connection.send_config_set(i)
+                    result = connection.send_config_set(i,read_timeout=60.0)
                 
 
         return  " ок"
