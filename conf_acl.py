@@ -13,7 +13,7 @@ class ConfACL(Script):
         name = "Игра: собери свой ACL,бро"
         description = "conf_ACL"
 
-    devices = ObjectVar(
+    devices = MultiObjectVar(
         description = "Выбери устройство",
         model=Device,
         )
@@ -21,8 +21,8 @@ class ConfACL(Script):
     
     def run(self, data, commit) -> None:
         test_list = []
-        a = (type(str(data)))
-        return a
+        for dev in data["device"]:
+            return dev
             
             
 
