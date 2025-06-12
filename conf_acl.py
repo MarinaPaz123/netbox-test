@@ -2,7 +2,7 @@ from dcim.models import DeviceRole, Device
 from dcim.models.mixins import RenderConfigMixin
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, FileVar
 from dcim.models.devices import DeviceRole
-#from django.utils.text import slugify
+from django.utils.text import slugify
 #import pynetbox
 #import requests
 
