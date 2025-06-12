@@ -22,9 +22,8 @@ class ConfACL(Script):
     def run(self, data, commit) -> None:
         test_list = []
         for dev in data["devices"]:
-            for key,val in dev.items():
-                if key == "custom_fields":
-                    test_list.append(val)
+            for key in dev:
+                test_list.append(key)
         return test_list
             
             
