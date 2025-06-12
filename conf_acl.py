@@ -3,8 +3,8 @@ from dcim.models.mixins import RenderConfigMixin
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, FileVar
 from dcim.models.devices import DeviceRole
 #from django.utils.text import slugify
-import pynetbox
-import requests
+#import pynetbox
+#import requests
 
 
 from jinja2 import Environment, FileSystemLoader
