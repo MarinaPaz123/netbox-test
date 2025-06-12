@@ -28,7 +28,7 @@ class ConfACL(Script):
         #netbox = pynetbox.api(URL, token = API_KEY)
         test_list = []
         for dev in data["devices"]:
-            test_list.append(str(dev.custom_fields["test_temp_conf"]))
+            test_list.append(dev.custom_fields["test_temp_conf"])
             test_list.append(str(dev.primary_ip.address.ip))
          
         return test_list
