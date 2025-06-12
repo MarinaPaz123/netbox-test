@@ -24,9 +24,10 @@ class ConfACL(Script):
      
     
     def run(self, data, commit) -> None:
-        command_list = []
+        
         print_result = ""
         for dev in data["devices"]:
+            command_list = []
             for key,val in dev.custom_field_data.items():
                 command_list.append(val)
         for device in data["devices"]:
@@ -43,7 +44,7 @@ class ConfACL(Script):
                 result = connection.send_config_set(i)
                 
 
-        return  f"{device.name} ок"
+        return  " ок"
         #return str(dev.custom_field_data)
             
             
