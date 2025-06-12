@@ -2,6 +2,7 @@ from dcim.models import DeviceRole, Device
 from dcim.models.mixins import RenderConfigMixin
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, FileVar
 from dcim.models.devices import DeviceRole
+from django.utils.text import slugify
 
 
 from jinja2 import Environment, FileSystemLoader
@@ -22,7 +23,7 @@ class ConfACL(Script):
     def run(self, data, commit) -> None:
         test_list = []
         for dev in data["devices"]:
-            test_list.append(dev.site)
+            test_list.append(str(dev.site))
          
         return test_list
             
