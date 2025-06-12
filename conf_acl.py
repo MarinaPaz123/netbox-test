@@ -20,9 +20,7 @@ class ConfACL(Script):
      
     
     def run(self, data, commit) -> None:
-        test_list = []
-        data.save()
-        return data
+        return type(data)
             
             
 
