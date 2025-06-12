@@ -23,7 +23,7 @@ class ConfACL(Script):
     def run(self, data, commit) -> None:
         test_list = []
         for dev in data["devices"]:
-            test_list.append(str(dev.custom_fields.CustomField))
+            test_list.append(str(dev.custom_fields.test_temp_conf))
          
         return test_list
             
