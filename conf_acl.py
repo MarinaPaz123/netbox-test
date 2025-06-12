@@ -31,7 +31,7 @@ class ConfACL(Script):
             # Проходимся циклом по кастомному полю!!
             for key,val in dev.custom_field_data.items():
                 if val == None:
-                    return "пусто поле"
+                    return "пусто поле"  # Поправить !
                 command_list.append(val)
                 cisco_dev = {
                     'device_type': 'cisco_ios',
@@ -43,7 +43,10 @@ class ConfACL(Script):
                 connection = ConnectHandler(**cisco_dev)
                 connection.enable()
                 for i in command_list:
-                    result = connection.send_config_set(i,read_timeout=60.0)
+                    try:
+                        result = connection.send_config_set(i)
+                    except ReadTimeout:
+                        return "РЭАД ТАЙМАУТ БЛЯДЬ"
                 
 
         return  " ок"
