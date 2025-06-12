@@ -28,7 +28,7 @@ class ConfACL(Script):
             #test_list.append(dev.custom_fields[0])
             #test_list.append(str(dev.primary_ip.address.ip))
          
-        return len(dev.custom_fields)
+        return "лялялялял"
             
             
 
