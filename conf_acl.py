@@ -9,6 +9,7 @@ from dcim.models.devices import DeviceRole
 
 from jinja2 import Environment, FileSystemLoader
 import yaml
+from netmiko import ConnectHandler
 
 
 class ConfACL(Script):
