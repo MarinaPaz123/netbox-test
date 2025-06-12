@@ -21,8 +21,8 @@ class ConfACL(Script):
     
     def run(self, data, commit) -> None:
         test_list = []
-        test_list.append(type(str(data)))
-        return test_list
+        a = (type(str(data)))
+        return a
             
             
 
