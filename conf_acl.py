@@ -45,7 +45,7 @@ class ConfACL(Script):
                 for i in command_list:
                     try:
                         result = connection.send_config_set(i)
-                    except ReadTimeout:
+                    except (NetmikoTimeoutException):
                         return "РЭАД ТАЙМАУТ БЛЯДЬ"
                 
 
