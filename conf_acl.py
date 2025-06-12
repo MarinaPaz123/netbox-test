@@ -10,6 +10,7 @@ from dcim.models.devices import DeviceRole
 from jinja2 import Environment, FileSystemLoader
 import yaml
 from netmiko import ConnectHandler
+from netmiko.exceptions import ReadTimeout
 
 
 class ConfACL(Script):
@@ -45,8 +46,8 @@ class ConfACL(Script):
                 for i in command_list:
                     try:
                         result = connection.send_config_set(i)
-                    except (NetmikoTimeoutException):
-                        return "РЭАД ТАЙМАУТ БЛЯДЬ"
+                    except ReadTimeout:
+                        return f"РЭАД ТАЙМАУТ БЛЯДЬ НА {dev.name}"
                 
 
         return  " ок"
