@@ -23,12 +23,9 @@ class ConfACL(Script):
      
     
     def run(self, data, commit) -> None:
-        #URL = 'http://192.168.85.128/'
-        #API_KEY = '1c99a62d0cafe13c94d375a982cfd87b470513f0'
-        #netbox = pynetbox.api(URL, token = API_KEY)
-        test_list = []
+       test_list = []
         for dev in data["devices"]:
-            test_list.append(dev.custom_fields[0])
+            test_list.append(dev.custom_fields["test_temp_conf"])
             #test_list.append(str(dev.primary_ip.address.ip))
          
         return test_list
