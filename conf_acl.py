@@ -30,18 +30,18 @@ class ConfACL(Script):
             command_list = []
             for key,val in dev.custom_field_data.items():
                 command_list.append(val)
-        for device in data["devices"]:
-            cisco_dev = {
-            'device_type': 'cisco_ios',
-            'host': str(device.primary_ip.address.ip),
-            'username': 'cisco',
-            'password': 'cisco',
-            'secret': 'cisco',
-            }
-            connection = ConnectHandler(**cisco_dev)
-            connection.enable()
-            for i in command_list:
-                result = connection.send_config_set(i)
+            for device in data["devices"]:
+                cisco_dev = {
+                'device_type': 'cisco_ios',
+                'host': str(device.primary_ip.address.ip),
+                'username': 'cisco',
+                'password': 'cisco',
+                'secret': 'cisco',
+                }
+                connection = ConnectHandler(**cisco_dev)
+                #connection.enable()
+                for i in command_list:
+                    result = connection.send_config_set(i)
                 
 
         return  " ок"
