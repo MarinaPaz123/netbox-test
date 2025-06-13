@@ -28,12 +28,12 @@ class ConfACL(Script):
         
         print_result = ""
         for dev in data["devices"]:
-            command_list = []
+            temp_command_list = []
             # Проходимся циклом по кастомному полю!!
             for key,val in dev.custom_field_data.items():
-                if val == None:
-                    return "пусто поле"  # Поправить ! - continue
-                command_list.append(val)
+                if val == None: # Если кастомное поле пустое
+                    continue
+                temp_command_list.append(val)
                 cisco_dev = {
                     'device_type': 'cisco_ios',
                     'host': str(dev.primary_ip.address.ip),
@@ -43,9 +43,10 @@ class ConfACL(Script):
                     }
                 connection = ConnectHandler(**cisco_dev)
                 connection.enable()
-                for i in command_list:
+                for i in temp_command_list:
+                    final_command_list = i.split("\n")
                     try:
-                        result = connection.send_config_set(i)
+                        result = connection.send_config_set(final_command_list)
                     except ReadTimeout: # Не понятно, почему. Ибо команды все отправляются 
                         return f"РЭАД ТАЙМАУТ БЛЯДЬ НА {dev.name}"
                 
