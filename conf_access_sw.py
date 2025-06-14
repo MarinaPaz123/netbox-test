@@ -8,7 +8,7 @@ class Access_sw(Script):
     
   devices = MultiObjectVar(
         description = "Выбери устройство",
-        model=Device
+        model=Device(role= {"id": 2})
         )
 
   def run(self, data, commit) -> None:
