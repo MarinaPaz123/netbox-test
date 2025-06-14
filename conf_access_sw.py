@@ -1,4 +1,4 @@
-from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar,ChoiceVar
 from dcim.models import DeviceRole, Device
 
 class Access_sw(Script):
