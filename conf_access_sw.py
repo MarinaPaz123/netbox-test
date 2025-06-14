@@ -17,8 +17,9 @@ class Access_sw(Script):
     ('access_sw_port_security', 'Настроить port security'),
   )
   select_action = ChoiceVar(choices=action)
-  if select_action == None:
-    pass
+  if select_action == "vlan_access_sw":
+    input_vlan/vlans = TextVar()
+    
   
   def run(self, data, commit) -> None:
     pass
