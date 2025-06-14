@@ -7,9 +7,9 @@ class Access_sw(Script):
     description = "conf access sw"
     
   devices = MultiObjectVar(
-        description = "Выбери устройство",
+        description = "Выбери коммутатор",
         model=Device,
-        query_params={"role_id": 2}
+        query_params={"role_id": 2} # Выбрать можно коммутаторы ACCESS!
         )
 
   def run(self, data, commit) -> None:
