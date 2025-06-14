@@ -21,5 +21,5 @@ class Access_sw(Script):
     
   
   def run(self, data, commit) -> None:
-    return str(data["devices"])
+    return str(data["action"])
 
