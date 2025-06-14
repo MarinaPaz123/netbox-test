@@ -19,7 +19,7 @@ class Access_sw(Script):
   select_action = ChoiceVar(choices=action)
   #if select_action == ('vlan_access_sw', 'Создать vlan и подать на порты'):
     
-  #input_vlan/vlans = TextVar()
+  input_vlan = TextVar()
     
   
   def run(self, data, commit) -> None:
