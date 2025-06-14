@@ -11,11 +11,14 @@ class Access_sw(Script):
         model=Device,
         query_params={"role_id": 2} # Выбрать можно коммутаторы ACCESS!
         )
+  
   action = (
     ('vlan_access_sw', 'Создать vlan и подать на порты'),
     ('access_sw_port_security', 'Настроить port security'),
   )
   select_action = ChoiceVar(choices=action)
+  if select_action == None:
+    pass
   
   def run(self, data, commit) -> None:
     pass
