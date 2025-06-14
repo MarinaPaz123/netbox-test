@@ -17,7 +17,7 @@ class Access_sw(Script):
     ('access_sw_port_security', 'Настроить port security'),
   )
   select_action = ChoiceVar(choices=action)
-  if select_action == ('vlan_access_sw', 'Создать vlan и подать на порты'):
+  if action == ('vlan_access_sw', 'Создать vlan и подать на порты'):
     input_vlan = TextVar()
   else:
     input_четотам = TextVar()
