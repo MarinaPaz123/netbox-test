@@ -2,7 +2,7 @@ from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar,ChoiceVar
 from dcim.models import DeviceRole, Device,Site
 import django_filters
 from django.db.models import Q
-from .models import BgpPeering
+#from .models import BgpPeering
 
 class Access_sw(Script):
   class Meta:
