@@ -20,6 +20,10 @@ class Access_sw(Script):
     ('access_sw_port_security', 'Настроить port security'),
     )
   select_action = ChoiceVar(choices=action)
+
+  test = ScriptVariable(
+    description='какая-то херня')
+  
  
   
 
