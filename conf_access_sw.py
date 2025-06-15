@@ -21,27 +21,8 @@ class Access_sw(Script):
     )
   select_action = ChoiceVar(choices=action)
   
-class BgpPeeringFilter(django_filters.FilterSet):
-  """Filter capabilities for BgpPeering instances."""
 
-    q = django_filters.CharFilter(
-        method="search",
-        label="Search",
-    )
-    class Meta:
-        model = BgpPeering
 
-        fields = [
-            "local_as",
-            "remote_as",
-            "peer_name",
-        ]
-
-  
-  
-  
-    
-  
   def run(self, data, commit) -> None:
     return str(data["select_action"])
 
