@@ -1,5 +1,8 @@
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar,ChoiceVar
-from dcim.models import DeviceRole, Device
+from dcim.models import DeviceRole, Device,Site
+import django_filters
+from django.db.models import Q
+from .models import BgpPeering
 
 class Access_sw(Script):
   class Meta:
@@ -16,9 +19,15 @@ class Access_sw(Script):
     ('vlan_access_sw', 'Создать vlan и подать на порты'),
     ('access_sw_port_security', 'Настроить port security'),
     )
-  select_action = ChoiceVar(choices=action)
-  if select_action != None:
-    input_vlan = TextVar()
+  
+  class BgpPeeringFilter(django_filters.FilterSet):
+    """Filter capabilities for BgpPeering instances."""
+
+    q = django_filters.CharFilter(
+        method="search",
+        label="Search",
+    )
+  
   
     
   
