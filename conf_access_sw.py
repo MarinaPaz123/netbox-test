@@ -20,6 +20,11 @@ class Access_sw(Script):
     ('access_sw_port_security', 'Настроить port security'),
     )
   select_action = ChoiceVar(choices=action)
+  test = django_filters.ModelMultipleChoiceFilter(
+        field_name="site__slug",
+        queryset=Site.objects.all(),
+        to_field_name="slug",
+    )
   
 
 
