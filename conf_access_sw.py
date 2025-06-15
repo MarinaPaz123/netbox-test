@@ -26,6 +26,8 @@ class Access_sw(Script):
   clone_fields = (
         'action',
     )
+  def clean(self):
+        super().clean()
 
   
  
