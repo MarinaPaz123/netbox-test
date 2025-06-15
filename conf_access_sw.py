@@ -23,7 +23,10 @@ class Access_sw(Script):
   test = ScriptVariable(
     description='какая-то херня',
     )
-  
+  clone_fields = (
+        'action',
+    )
+
   
  
   
