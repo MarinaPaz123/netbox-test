@@ -27,7 +27,11 @@ class Access_sw(Script):
         'action',
     )
   def clean(self):
-        super().clean()
+    super().clean()
+    action = None
+    if self.action:
+        action = self.action.model_class()
+            
 
   
  
