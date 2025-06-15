@@ -19,7 +19,7 @@ class Access_sw(Script):
     ('vlan_access_sw', 'Создать vlan и подать на порты'),
     ('access_sw_port_security', 'Настроить port security'),
     )
-  
+  select_action = ChoiceVar(choices=action)
   class BgpPeeringFilter(django_filters.FilterSet):
     """Filter capabilities for BgpPeering instances."""
 
