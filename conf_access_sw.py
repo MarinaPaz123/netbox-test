@@ -20,13 +20,16 @@ class Access_sw(Script):
     ('access_sw_port_security', 'Настроить port security'),
     )
   select_action = ChoiceVar(choices=action)
-  class BgpPeeringFilter(django_filters.FilterSet):
-    """Filter capabilities for BgpPeering instances."""
+  
+class BgpPeeringFilter(django_filters.FilterSet):
+  """Filter capabilities for BgpPeering instances."""
 
-    q = django_filters.CharFilter(
-        method="search",
-        label="Search",
-    )
+  q = django_filters.CharFilter(
+      method="search",
+      label="Search",
+  )
+
+  
   
   
     
