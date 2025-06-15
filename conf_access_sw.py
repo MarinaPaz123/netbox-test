@@ -1,4 +1,4 @@
-from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar,ChoiceVar
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable
 from dcim.models import DeviceRole, Device,Site
 import django_filters
 from django.db.models import Q
