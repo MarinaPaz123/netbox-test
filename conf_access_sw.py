@@ -1,8 +1,7 @@
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable
 from dcim.models import DeviceRole, Device,Site
-import django_filters
-from django.db.models import Q
-#from .models import BgpPeering
+
+from django.contrib.contenttypes.fields import GenericRelation
 
 class Access_sw(Script):
   class Meta:
