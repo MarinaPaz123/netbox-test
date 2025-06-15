@@ -24,10 +24,18 @@ class Access_sw(Script):
 class BgpPeeringFilter(django_filters.FilterSet):
   """Filter capabilities for BgpPeering instances."""
 
-  q = django_filters.CharFilter(
-      method="search",
-      label="Search",
-  )
+    q = django_filters.CharFilter(
+        method="search",
+        label="Search",
+    )
+    class Meta:
+        model = BgpPeering
+
+        fields = [
+            "local_as",
+            "remote_as",
+            "peer_name",
+        ]
 
   
   
