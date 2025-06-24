@@ -28,7 +28,8 @@ class Access_sw(Script):
     )
   def clean(self):
     super().clean()
-    action = None
+    site = None
+    #action = None
     if self.action:
         action = self.action.model_class()
         if action == 'vlan_access_sw':
