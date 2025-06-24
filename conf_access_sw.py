@@ -32,7 +32,7 @@ class Access_sw(Script):
     if self.action:
         action = self.action.model_class()
         if action == 'vlan_access_sw':
-            site = self.scope
+            site = "ляляля"
           
             
 
