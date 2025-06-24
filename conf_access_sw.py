@@ -24,7 +24,7 @@ class Access_sw(Script):
     description='какая-то херня',
     )
   clone_fields = (
-        'action',
+        'action',"site"
     )
   def clean(self):
     super().clean()
