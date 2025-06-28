@@ -2,7 +2,6 @@ from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
 from dcim.models import DeviceRole, Device,Site
 from dcim.models.mixins import CachedScopeMixin
 
-from django.contrib.contenttypes.fields import GenericRelation
 
 class Access_sw(Script):
   class Meta():
