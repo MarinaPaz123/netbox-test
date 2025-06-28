@@ -1,9 +1,10 @@
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable
 from dcim.models import DeviceRole, Device,Site
+from dcim.models.mixins import CachedScopeMixin
 
 from django.contrib.contenttypes.fields import GenericRelation
 
-class Access_sw(Script):
+class Access_sw(Script,CachedScopeMixin):
   class Meta:
     name = "Настрой свитч доступа"
     description = "conf access sw"
