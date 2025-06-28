@@ -25,6 +25,6 @@ class Access_sw(Script):
     )
 
 
-   def run(self, data, commit) -> None:
+  def run(self, data, commit) -> None:
     return str(data["select_action"])
 
