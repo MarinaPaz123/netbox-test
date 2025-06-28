@@ -5,7 +5,7 @@ from dcim.models.mixins import CachedScopeMixin
 from django.contrib.contenttypes.fields import GenericRelation
 
 class Access_sw(Script):
-  class Meta:
+  class Meta(CachedScopeMixin):
     name = "Настрой свитч доступа"
     description = "conf access sw"
     
