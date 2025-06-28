@@ -24,27 +24,8 @@ class Access_sw(Script):
   test = ScriptVariable(
     description='какая-то херня',
     )
-  clone_fields = (
-        'scope_type','scope_id','action',"site"
-    )
-  def clean(self):
-    super().clean()
-    site = None
-    #action = None
-    if self.action:
-        action = self.action.model_class()
-        if action == 'vlan_access_sw':
-            site = "ляляля"
-        else:
-            site = "ляляля"
 
 
-
-  
- 
-  
-
-
-  def run(self, data, commit) -> None:
+   def run(self, data, commit) -> None:
     return str(data["select_action"])
 
