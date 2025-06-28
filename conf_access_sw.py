@@ -37,8 +37,7 @@ class Access_sw(Script):
             site = "ляляля"
         else:
             site = "ляляля"
-class Test(CachedScopeMixin):
-    pass
+
 
 
   
