@@ -29,7 +29,7 @@ class Access_sw(Script):
   )
   templ = MultiObjectVar(
      model= CustomFieldManager,
-     query_params={"role_id": 2}
+     #query_params={"role_id": 2}
   )
         
 
