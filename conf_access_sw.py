@@ -23,7 +23,7 @@ class Access_sw(Script):
   test = ScriptVariable(
     description='какая-то херня',
     )
-  test2 = CachedScopeMixin()
+ 
 
 
   def run(self, data, commit) -> None:
