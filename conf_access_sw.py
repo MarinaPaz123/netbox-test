@@ -17,7 +17,7 @@ class Access_sw(Script):
   
   vlan_id = MultiObjectVar(
        description = "Выбери vlan,братишка",
-       model=Vlan)
+       model=VLAN)
         
 
 
