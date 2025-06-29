@@ -2,6 +2,7 @@ from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar
 from dcim.models import DeviceRole, Device, Site
 from ipam.models.vlans import VLAN
 from dcim.models.device_components import Interface
+from extras.models.customfields import CustomField, CustomFieldChoiceSet, CustomFieldManager
 
 
 
@@ -25,6 +26,10 @@ class Access_sw(Script):
      description = "Выбери порты,братишка",
      model= Interface,
      query_params={"device_id": "$devices"}
+  )
+  templ = MultiObjectVar(
+     model= CustomFieldManager,
+     query_params={"role_id": 2}
   )
         
 
