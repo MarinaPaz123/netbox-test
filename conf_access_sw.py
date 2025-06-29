@@ -28,7 +28,8 @@ class Access_sw(Script):
      query_params={"device_id": "$devices"}
   )
   templ = MultiObjectVar(
-     model= CustomFieldManager,
+     description = "ляляля",
+     model= CustomField,
      #query_params={"role_id": 2}
   )
         
