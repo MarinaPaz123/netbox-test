@@ -15,7 +15,7 @@ class Access_sw(Script):
         )
   
   vlan_id = StringVar(
-       description = "Введи vlan_id",)
+       description = "Введи vlan_id.Если vlan несколько,введи их через запятую е мае",)
         
 
 
