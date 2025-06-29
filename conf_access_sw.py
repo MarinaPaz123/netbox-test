@@ -15,8 +15,9 @@ class Access_sw(Script):
         query_params={"role_id": 2} # Выбрать можно коммутаторы ACCESS!
         )
   
-  vlan_id = StringVar(
-       description = "Введи vlan_id.Если vlan несколько,введи их через запятую е мае",)
+  vlan_id = MultiObjectVar(
+       description = "Выбери vlan,братишка",
+       model=Vlan)
         
 
 
