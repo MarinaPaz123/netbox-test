@@ -1,12 +1,12 @@
-from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable
+from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable,StringVar
 from dcim.models import DeviceRole, Device,Site
 from dcim.models.mixins import CachedScopeMixin
 
 
 class Access_sw(Script):
   class Meta():
-    name = "Настрой свитч доступа"
-    description = "conf access sw"
+    name = "Настрой vlan на свитче доступа"
+    description = "conf vlan access sw"
     
   devices = MultiObjectVar(
         description = "Выбери коммутатор",
@@ -20,10 +20,9 @@ class Access_sw(Script):
     )
   select_action = ChoiceVar(choices=action)
 
-  test = ScriptVariable(
-    description='какая-то херня',
-    )
- 
+  vlan_id = StringVar(
+       description = "Введи vlan_id",)
+        
 
 
   def run(self, data, commit) -> None:
