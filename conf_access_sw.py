@@ -24,7 +24,7 @@ class Access_sw(Script):
   Interfaces = MultiObjectVar(
      description = "Выбери порты,братишка",
      model= Interface,
-     #query_params={"device_id": $devices}
+     query_params={"device_id": "$devices"}
   )
         
 
