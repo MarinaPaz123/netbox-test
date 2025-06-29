@@ -14,12 +14,6 @@ class Access_sw(Script):
         query_params={"role_id": 2} # Выбрать можно коммутаторы ACCESS!
         )
   
-  action = (
-    ('vlan_access_sw', 'Создать vlan и подать на порты'),
-    ('access_sw_port_security', 'Настроить port security'),
-    )
-  select_action = ChoiceVar(choices=action)
-
   vlan_id = StringVar(
        description = "Введи vlan_id",)
         
