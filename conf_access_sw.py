@@ -1,6 +1,6 @@
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable,StringVar
 from dcim.models import DeviceRole, Device,Site
-from dcim.models.mixins import CachedScopeMixin
+
 
 
 class Access_sw(Script):
