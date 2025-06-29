@@ -17,7 +17,8 @@ class Access_sw(Script):
   
   vlan_id = MultiObjectVar(
        description = "Выбери vlan,братишка",
-       model=VLAN)
+       model=VLAN,
+       query_params={"site_id": 1} # Выбрать можно vlan только в сайте "test"!)
         
 
 
