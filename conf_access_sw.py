@@ -1,6 +1,7 @@
 from extras.scripts import Script, ObjectVar, MultiObjectVar, TextVar, ChoiceVar, ScriptVariable,StringVar
-from dcim.models import DeviceRole, Device,Site
+from dcim.models import DeviceRole, Device, Site
 from ipam.models.vlans import VLAN
+from dcim.models.device_components import Interface
 
 
 
@@ -19,6 +20,11 @@ class Access_sw(Script):
        description = "Выбери vlan,братишка",
        model=VLAN,
        query_params={"site_id": 1} # Выбрать можно vlan только в сайте test!
+  )
+  Interfaces = MultiObjectVar(
+     description = "Выбери порты,братишка",
+     model= Interface,
+     query_params={"device_id": $devices}
   )
         
 
